@@ -1,8 +1,28 @@
 import Exercise from "./exercise-component"
 
-function Day({day, exercises}) {
+type Exercises =  {
+    id: string,
+    name: string,
+    sets: number,
+    reps: number,
+    rest: String,
+    weight: number,
+    text: string,
+    image: string,
+    muscleImage: string,
+    video: string,
+}
+
+type DayProps = {
+    day: string,
+    exercises: Exercises[]
+}
+
+function Day({day, exercises}: DayProps) {
     function toggleHidden(e: React.MouseEvent<HTMLElement>) {
-        e.currentTarget.nextElementSibling!.hidden = !e.currentTarget.nextElementSibling!.hidden
+        const el = e.currentTarget.nextElementSibling as HTMLElement
+        el.hidden = !el.hidden
+
     }
 
     return (

@@ -1,6 +1,18 @@
 import playBtnImg from "./assets/play-button-arrowhead.png"
 
-function Exercise({name, sets, reps, rest, weight, text, img, muscleImg, video}) {
+type infosOfExercise = {
+    name: string,
+    sets: number,
+    reps: number,
+    rest: String,
+    weight: number,
+    text: string,
+    img: string,
+    muscleImg: string,
+    video: string,
+}
+
+function Exercise({name, sets, reps, rest, weight, text, img, muscleImg, video}: infosOfExercise) {
     var setsArray = Array(sets)
     console.log("AQUIIIIIIIIIIIIIii")
     for (var i = 0; i < setsArray.length; i++) {
@@ -9,7 +21,8 @@ function Exercise({name, sets, reps, rest, weight, text, img, muscleImg, video})
     console.log(setsArray)
 
     function toggleHidden(e: React.MouseEvent<HTMLElement>) {
-        e.currentTarget.nextElementSibling!.hidden = !e.currentTarget.nextElementSibling!.hidden
+        const el = e.currentTarget.nextElementSibling! as HTMLElement
+       el.hidden = !el.hidden
     }
 
     function toggleSetAsDone(e: React.MouseEvent<HTMLElement>) {
@@ -36,13 +49,13 @@ function Exercise({name, sets, reps, rest, weight, text, img, muscleImg, video})
 
     function playOrPauseVideo(e: React.MouseEvent<HTMLVideoElement>) {
         var video: HTMLVideoElement = e.currentTarget
-        
+        var playBtn = video.previousElementSibling as HTMLButtonElement
         if (video.paused) {
             video.play()
-            video.previousElementSibling!.hidden = true
+            playBtn.hidden = true
         } else {
             video.pause()
-            video.previousElementSibling!.hidden = false
+            playBtn.hidden = false
             video.currentTime = 0
         }
     }

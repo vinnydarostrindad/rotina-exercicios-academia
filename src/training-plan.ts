@@ -297,7 +297,7 @@ export default [
       {
         id: "hammerCurl",
         name: "Rosca martelo",
-        sets: 3,
+        sets: 2,
         reps: 12,
         rest: "1 minuto",
         weight: 0,
@@ -316,7 +316,7 @@ export default [
         text: "Fortalecimento do abdômen",
         image: "/imgs/abdominal.jpg",
         muscleImage: "/imgs/muscle/abdominal.jpg",
-        video: "/videos/abdominal.mp4"
+        video: ""
       },
       {
         id: "plank",
@@ -328,7 +328,7 @@ export default [
         text: "Estabilidade e core",
         image: "/imgs/prancha.jpg",
         muscleImage: "/imgs/muscle/prancha.jpg",
-        video: "/videos/prancha.mp4"
+        video: ""
       }
     ]
   },

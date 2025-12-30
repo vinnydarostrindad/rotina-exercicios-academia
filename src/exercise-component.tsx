@@ -3,7 +3,7 @@ import playBtnImg from "./assets/play-button-arrowhead.png"
 type infosOfExercise = {
     name: string,
     sets: number,
-    reps: number,
+    reps: string,
     rest: String,
     weight: number,
     text: string,
@@ -14,11 +14,9 @@ type infosOfExercise = {
 
 function Exercise({name, sets, reps, rest, weight, text, img, muscleImg, video}: infosOfExercise) {
     var setsArray = Array(sets)
-    console.log("AQUIIIIIIIIIIIIIii")
     for (var i = 0; i < setsArray.length; i++) {
         setsArray[i] = i
     }
-    console.log(setsArray)
 
     function toggleHidden(e: React.MouseEvent<HTMLElement>) {
         const el = e.currentTarget.nextElementSibling! as HTMLElement
@@ -66,7 +64,7 @@ function Exercise({name, sets, reps, rest, weight, text, img, muscleImg, video}:
                 <img src={img} className="size-28 object-cover"/>
                 <h3 className="text-base w-full text-center font-semibold px-2">{name}</h3>
             </div>
-            <div className='px-4' hidden>
+            <div className='px-4 mb-8' hidden>
                 <div className="flex flex-col gap-6">
                     <div className="flex flex-wrap gap-4 justify-center">
                         {
@@ -86,10 +84,15 @@ function Exercise({name, sets, reps, rest, weight, text, img, muscleImg, video}:
                     </div>
                     <p className="text-center font-semibold">{text}</p>
                     <img src={muscleImg} width="370" className="m-auto border-3 border-blue-100"/>
-                    <div className="flex justify-center items-center mb-8">
-                        <button className="size-12 absolute bg-blue-700 rounded-full flex justify-center items-center"><img src={playBtnImg} style={{marginLeft: "3px"}}/></button>
-                        <video src={video} onClick={(e) => playOrPauseVideo(e)}></video>
-                    </div>
+                    {
+                        video ?
+                            <div className="flex justify-center items-center">
+                                <button className="size-12 absolute bg-blue-700 rounded-full flex justify-center items-center"><img src={playBtnImg} style={{marginLeft: "3px"}}/></button>
+                                <video src={video} onClick={(e) => playOrPauseVideo(e)}></video>
+                            </div>
+                            :  null
+                    }
+                    
                 </div>
             </div>
         </>

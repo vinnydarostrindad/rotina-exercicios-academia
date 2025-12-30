@@ -4,7 +4,7 @@ type Exercises =  {
     id: string,
     name: string,
     sets: number,
-    reps: number,
+    reps: string,
     rest: String,
     weight: number,
     text: string,

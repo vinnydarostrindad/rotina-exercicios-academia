@@ -5,7 +5,7 @@ type Exercises =  {
     name: string,
     sets: number,
     reps: string,
-    rest: String,
+    rest: string,
     weight: number,
     text: string,
     image: string,

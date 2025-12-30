@@ -4,7 +4,7 @@ type infosOfExercise = {
     name: string,
     sets: number,
     reps: string,
-    rest: String,
+    rest: string,
     weight: number,
     text: string,
     img: string,

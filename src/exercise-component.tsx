@@ -73,10 +73,10 @@ function Exercise({name, sets, reps, rest, weight, text, img, muscleImg, video}:
                                     <div className="w-3/7 text-center border border-wight rounded-lg p-2 cursor-pointer" onClick={(e) => toggleSetAsDone(e)}>
                                         <p className="font-bold">{index + 1}° Série</p>
                                         {
-                                            weight ? <p>{weight}kg</p> : null
+                                            weight ? <p className="text-xs mt-1">Peso: {weight}kg</p> : null
                                         }
-                                        <p>Repetições: {reps}</p>
-                                        <p>Intervalo: {rest}</p>
+                                        <p className="text-xs mt-1">Repetições: {reps}</p>
+                                        <p className="text-xs mt-1">Intervalo: {rest}</p>
                                     </div>
                                 )
                             })

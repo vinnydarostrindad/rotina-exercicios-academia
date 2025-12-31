@@ -12,7 +12,7 @@ export default [
       {
         id: "inclineDumbbellPress",
         name: "Supino inclinado com halteres",
-        sets: 3,
+        sets: [false, false, false],
         reps: "8 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: 0,
@@ -24,7 +24,7 @@ export default [
       {
         id: "pecDeck",
         name: "Peck deck",
-        sets: 3,
+        sets: [false, false, false],
         reps: "10 a 15 reps",
         rest: "1 minuto",
         weight: 0,
@@ -36,7 +36,7 @@ export default [
       {
         id: "highCableCrossover",
         name: "Crossover na polia alta",
-        sets: 3,
+        sets: [false, false, false],
         reps: "10 a 15 reps",
         rest: "1 minuto",
         weight: 0,
@@ -48,7 +48,7 @@ export default [
       {
         id: "dumbbellBenchPress",
         name: "Supino reto com halteres",
-        sets: 3,
+        sets: [false, false, false],
         reps: "8 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: 0,
@@ -60,7 +60,7 @@ export default [
       {
         id: "ropeTricepsPushdown",
         name: "Pulley tríceps",
-        sets: 3,
+        sets: [false, false, false],
         reps: "10 a 15 reps",
         rest: "1 minuto",
         weight: 0,
@@ -72,7 +72,7 @@ export default [
       {
         id: "skullCrusher",
         name: "Tríceps testa",
-        sets: 3,
+        sets: [false, false, false],
         reps: "8 a 12 reps",
         rest: "1 minuto",
         weight: 0,
@@ -84,7 +84,7 @@ export default [
       {
         id: "frenchPress",
         name: "Tríceps francês",
-        sets: 3,
+        sets: [false, false, false],
         reps: "10 a 12 reps",
         rest: "1 minuto",
         weight: 0,
@@ -103,7 +103,7 @@ export default [
       {
         id: "seatedCalfRaise",
         name: "Panturrilha sentado",
-        sets: 3,
+        sets: [false, false, false],
         reps: "12 a 20 reps",
         rest: "1 minuto",
         weight: 0,
@@ -115,7 +115,7 @@ export default [
       {
         id: "squat",
         name: "Agachamento",
-        sets: 3,
+        sets: [false, false, false],
         reps: "6 a 10 reps",
         rest: "1 minuto e 30 segundos",
         weight: 0,
@@ -127,7 +127,7 @@ export default [
       {
         id: "legExtension",
         name: "Cadeira extensora",
-        sets: 3,
+        sets: [false, false, false],
         reps: "10 a 15 reps",
         rest: "1 minuto",
         weight: 0,
@@ -139,7 +139,7 @@ export default [
       {
         id: "hipAbductor",
         name: "Cadeira abdutora",
-        sets: 3,
+        sets: [false, false, false],
         reps: "12 a 20 reps",
         rest: "1 minuto",
         weight: 0,
@@ -151,7 +151,7 @@ export default [
       {
         id: "legPress",
         name: "Leg press",
-        sets: 3,
+        sets: [false, false, false],
         reps: "8 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: 0,
@@ -170,7 +170,7 @@ export default [
       {
         id: "latPulldown",
         name: "Pulley costas",
-        sets: 3,
+        sets: [false, false, false],
         reps: "8 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: 0,
@@ -182,7 +182,7 @@ export default [
       {
         id: "closeGripLowRow",
         name: "Remada baixa fechada",
-        sets: 3,
+        sets: [false, false, false],
         reps: "8 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: 0,
@@ -194,7 +194,7 @@ export default [
       {
         id: "wideGripLowRow",
         name: "Remada baixa aberta",
-        sets: 3,
+        sets: [false, false, false],
         reps: "10 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: 0,
@@ -206,7 +206,7 @@ export default [
       {
         id: "bentOverRow",
         name: "Remada curvada",
-        sets: 3,
+        sets: [false, false, false],
         reps: "6 a 10 reps",
         rest: "1 minuto e 30 segundos",
         weight: 0,
@@ -218,7 +218,7 @@ export default [
       {
         id: "barbellCurl",
         name: "Rosca direta",
-        sets: 3,
+        sets: [false, false, false],
         reps: "8 a 12 reps",
         rest: "1 minuto",
         weight: 0,
@@ -230,7 +230,7 @@ export default [
       {
         id: "scottCurl",
         name: "Rosca Scott",
-        sets: 3,
+        sets: [false, false, false],
         reps: "10 a 12 reps",
         rest: "1 minuto",
         weight: 0,
@@ -249,7 +249,7 @@ export default [
       {
         id: "shoulderPress",
         name: "Desenvolvimento",
-        sets: 3,
+        sets: [false, false, false],
         reps: "8 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: 0,
@@ -261,7 +261,7 @@ export default [
       {
         id: "lateralRaise",
         name: "Elevação lateral",
-        sets: 3,
+        sets: [false, false, false],
         reps: "12 a 15 reps",
         rest: "1 minuto",
         weight: 0,
@@ -273,7 +273,7 @@ export default [
       {
         id: "frontRaise",
         name: "Elevação frontal",
-        sets: 3,
+        sets: [false, false, false],
         reps: "10 a 12 reps",
         rest: "1 minuto",
         weight: 0,
@@ -285,7 +285,7 @@ export default [
       {
         id: "reverseFly",
         name: "Crucifixo inverso",
-        sets: 3,
+        sets: [false, false, false],
         reps: "12 a 15 reps",
         rest: "1 minuto",
         weight: 0,
@@ -297,7 +297,7 @@ export default [
       {
         id: "hammerCurl",
         name: "Rosca martelo",
-        sets: 2,
+        sets: [false, false],
         reps: "10 a 12 reps",
         rest: "1 minuto",
         weight: 0,
@@ -309,7 +309,7 @@ export default [
       {
         id: "absCrunch",
         name: "Abdominal",
-        sets: 3,
+        sets: [false, false, false],
         reps: "15 a 20 reps",
         rest: "1 minuto",
         weight: 0,
@@ -321,7 +321,7 @@ export default [
       {
         id: "plank",
         name: "Prancha",
-        sets: 3,
+        sets: [false, false, false],
         reps: "30 a 60 segundos",
         rest: "1 minuto",
         weight: 0,
@@ -340,7 +340,7 @@ export default [
       {
         id: "donkeyCalfRaise",
         name: "Panturrilha no burrinho",
-        sets: 3,
+        sets: [false, false, false],
         reps: "15 a 20 reps",
         rest: "1 minuto",
         weight: 0,
@@ -352,7 +352,7 @@ export default [
       {
         id: "legCurl",
         name: "Mesa flexora",
-        sets: 3,
+        sets: [false, false, false],
         reps: "10 a 15 reps",
         rest: "1 minuto",
         weight: 0,
@@ -364,7 +364,7 @@ export default [
       {
         id: "hipAbductor",
         name: "Cadeira abdutora",
-        sets: 3,
+        sets: [false, false, false],
         reps: "12 a 20 reps",
         rest: "1 minuto",
         weight: 0,
@@ -376,7 +376,7 @@ export default [
       {
         id: "sumoDeadlift",
         name: "Terra sumô",
-        sets: 3,
+        sets: [false, false, false],
         reps: "6 a 10 reps",
         rest: "1 minuto e 30 segundos",
         weight: 0,
@@ -388,7 +388,7 @@ export default [
       {
         id: "stiffLegDeadlift",
         name: "Stiff",
-        sets: 3,
+        sets: [false, false, false],
         reps: "8 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: 0,

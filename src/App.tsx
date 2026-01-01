@@ -143,7 +143,7 @@ function App() {
           })
         }
 
-        <div className="flex justify-center pt-4 pb-12"><button type="button" className="cursor-pointer bg-blue-700 hover:bg-blue-950 active:bg-blue-800 p-8 rounded-2xl border-2" onClick={() => resetSetsDone()}>Concluir semana</button></div>
+        <div className="flex justify-center pt-4 pb-12"><button type="button" className="cursor-pointer bg-blue-700 hover:bg-blue-950 active:bg-blue-800 p-6 rounded-2xl border-2" onClick={() => resetSetsDone()}>Concluir semana</button></div>
       </div>
       <AddWeightModal modalInfo={modalInfo} onCloseModal={closeModal} onSetNewWeight={setNewWeight}/>
     </>

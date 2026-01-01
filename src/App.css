@@ -3,3 +3,11 @@
 .set-done, .exercise-done {
     background-color: #212168;
 }
+
+.not-scroll {
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}

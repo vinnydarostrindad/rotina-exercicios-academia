@@ -1,28 +1,17 @@
 import Exercise from "./exercise-component"
 import { useState } from "react"
-
-type Exercises =  {
-    id: string,
-    name: string,
-    sets: boolean[],
-    reps: string,
-    rest: string,
-    weight: number,
-    text: string,
-    image: string,
-    muscleImage: string,
-    video: string,
-}
+import type { ExerciseKeys } from "./App"
 
 type DayProps = {
 	dayIndex: number
     day: string,
-    exercises: Exercises[]
+    exercises: ExerciseKeys[]
 	onToggleSets: (dayIndex: number, exerciseName: string, setIndex: number) => void
+    onClickHold: (dayIndex: number, exerciseName: string, setIndex: number) => void
 }
 
 
-function Day({dayIndex, day, exercises, onToggleSets}: DayProps) {
+function Day({dayIndex, day, exercises, onToggleSets, onClickHold}: DayProps) {
     const [showExercises, setShowExercises] = useState(false)
 
     return (
@@ -39,6 +28,7 @@ function Day({dayIndex, day, exercises, onToggleSets}: DayProps) {
 										dayIndex={dayIndex}
                                         exercise={exercise}
 										onToggleSets={onToggleSets}
+                                        onClickHold={onClickHold}
                                     />
                                 ))
                             }

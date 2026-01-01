@@ -1,24 +1,16 @@
+import type { ExerciseKeys } from "./App"
 import playBtnImg from "./assets/play-button-arrowhead.png"
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 type ExerciseProps = {
     dayIndex: number,
-    exercise: {
-        id: string
-        name: string,
-        sets: boolean[],
-        reps: string,
-        rest: string,
-        weight: number,
-        text: string,
-        image: string,
-        muscleImage: string,
-        video: string
-    },
+    exercise: ExerciseKeys,
     onToggleSets: (dayIndex: number, exerciseName: string, setIndex: number) => void
+    onClickHold: (dayIndex: number, exerciseName: string, setIndex: number) => void
 }
 
-function Exercise({dayIndex, exercise, onToggleSets}: ExerciseProps) {
+function Exercise({dayIndex, exercise, onToggleSets, onClickHold}: ExerciseProps) {
+    const holdTimeout = useRef<number | null>(null)
     const exerciseDone = exercise.sets.every(done => done)
     const [showExerciseInfos, setShowExerciseInfos] = useState<boolean>(false)
 
@@ -32,6 +24,18 @@ function Exercise({dayIndex, exercise, onToggleSets}: ExerciseProps) {
             video.pause()
             playBtn.hidden = false
             video.currentTime = 0
+        }
+    }
+
+    function handlePressStart(dayIndex: number, exerciseName: string, setIndex: number) {
+        holdTimeout.current = setTimeout(() => {
+            onClickHold(dayIndex, exerciseName, setIndex)
+    }, 500)
+    }
+
+    function handlePressEnd() {
+        if (holdTimeout.current) {
+            clearTimeout(holdTimeout.current)
         }
     }
 
@@ -49,13 +53,20 @@ function Exercise({dayIndex, exercise, onToggleSets}: ExerciseProps) {
                                 {
                                     exercise.sets.map((done, index) => {
                                         return (
-                                            <div key={index} className={done ? "w-3/7 text-center border border-wight rounded-lg p-2 cursor-pointer set-done" : "w-3/7 text-center border border-wight rounded-lg p-2 cursor-pointer"} onClick={() => onToggleSets(dayIndex, exercise.id, index)}>
+                                            <div 
+                                            key={index}
+                                            className={`flex flex-col justify-center w-3/7 text-center border border-wight rounded-lg p-2 cursor-pointer ${done ? "set-done" : ""}`}
+                                            onClick={() => onToggleSets(dayIndex, exercise.id, index)}
+                                            onMouseDown={() => handlePressStart(dayIndex, exercise.id, index)}
+                                            onMouseUp={handlePressEnd}
+                                            onTouchStart={() => handlePressStart(dayIndex, exercise.id, index)}
+                                            onTouchEnd={handlePressEnd}>
                                                 <p className="font-bold">{index + 1}° Série</p>
                                                 {
-                                                    exercise.weight ? <p className="text-xs mt-1">Peso: {exercise.weight}</p> : null
+                                                    exercise.weight[index] ? <p className="text-sm mt-1"><span className="font-semibold">Peso</span>: {exercise.weight[index]}</p> : null
                                                 }
-                                                <p className="text-xs mt-1">Repetições: {exercise.reps}</p>
-                                                <p className="text-xs mt-1">Intervalo: {exercise.rest}</p>
+                                                <p className="text-sm mt-1"><span className="font-semibold">Repetições:</span> {exercise.reps}</p>
+                                                <p className="text-sm mt-1"><span className="font-semibold">Intervalo:</span> {exercise.rest}</p>
                                             </div>
                                         )
                                     })

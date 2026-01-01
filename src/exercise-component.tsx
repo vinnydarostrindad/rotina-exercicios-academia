@@ -63,10 +63,10 @@ function Exercise({dayIndex, exercise, onToggleSets, onClickHold}: ExerciseProps
                                             onTouchEnd={handlePressEnd}>
                                                 <p className="font-bold">{index + 1}° Série</p>
                                                 {
-                                                    exercise.weight[index] ? <p className="text-sm mt-1"><span className="font-semibold">Peso</span>: {exercise.weight[index]}</p> : null
+                                                    exercise.weight[index] ? <p className="text-xs mt-1"><span className="font-semibold">Peso</span>: {exercise.weight[index]}</p> : null
                                                 }
-                                                <p className="text-sm mt-1"><span className="font-semibold">Repetições:</span> {exercise.reps}</p>
-                                                <p className="text-sm mt-1"><span className="font-semibold">Intervalo:</span> {exercise.rest}</p>
+                                                <p className="text-xs mt-1"><span className="font-semibold">Repetições:</span> {exercise.reps}</p>
+                                                <p className="text-xs mt-1"><span className="font-semibold">Intervalo:</span> {exercise.rest}</p>
                                             </div>
                                         )
                                     })

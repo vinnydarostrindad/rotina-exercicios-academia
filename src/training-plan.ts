@@ -7,7 +7,7 @@ export default [
 
   {
     id: "monday",
-    day: "Segunda",
+    day: "Segunda (Peito + Ombro + Tríceps)",
     exercises: [
       {
         id: "inclineDumbbellPress",
@@ -16,79 +16,55 @@ export default [
         reps: "8 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: ["", "", ""],
-        text: "Foco na parte superior do peito",
+        text: "Controle total do movimento, foco em força com segurança",
         image: "/imgs/supino-inclinado-halter.jpg",
         muscleImage: "/imgs/muscle/supino-inclinado-halter.jpg",
         video: "/videos/supino-inclinado-halter.mp4"
       },
       {
-        id: "pecDeck",
-        name: "Peck deck",
+        id: "machineChestPress",
+        name: "Supino inclinado com halteres",
         sets: [false, false, false],
-        reps: "10 a 15 reps",
-        rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Isolamento do peitoral com contração máxima",
-        image: "/imgs/peck-deck.jpg",
-        muscleImage: "/imgs/muscle/peck-deck.jpg",
-        video: "/videos/peck-deck.mp4"
-      },
-      {
-        id: "highCableCrossover",
-        name: "Crossover na polia alta",
-        sets: [false, false, false],
-        reps: "10 a 15 reps",
-        rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Ênfase no peitoral com movimento controlado",
-        image: "/imgs/crossover-polia-alta.jpg",
-        muscleImage: "/imgs/muscle/crossover-polia-alta.jpg",
-        video: "/videos/crossover-polia-alta.mp4"
-      },
-      {
-        id: "dumbbellBenchPress",
-        name: "Supino reto com halteres",
-        sets: [false, false, false],
-        reps: "8 a 12 reps",
+        reps: "10 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: ["", "", ""],
-        text: "Trabalho completo do peitoral",
+        text: "Mais estabilidade e menos estresse articular",
         image: "/imgs/supino-reto-halter.jpg",
         muscleImage: "/imgs/muscle/supino-reto-halter.jpg",
         video: "/videos/supino-reto-halter.mp4"
       },
       {
+        id: "lateralRaise",
+        name: "Elevação lateral",
+        sets: [false, false, false],
+        reps: "12 a 15 reps",
+        rest: "1 minuto",
+        weight: ["", "", ""],
+        text: "Cargas moderadas e execução limpa",
+        image: "/imgs/elevacao-lateral.jpg",
+        muscleImage: "/imgs/muscle/elevacao-lateral.jpg",
+        video: "/videos/elevacao-lateral.mp4"
+      },
+      {
         id: "ropeTricepsPushdown",
-        name: "Pulley tríceps",
+        name: "Pulley tríceps com corda",
         sets: [false, false, false],
         reps: "10 a 15 reps",
         rest: "1 minuto",
         weight: ["", "", ""],
-        text: "Isolamento do tríceps com foco na extensão",
+        text: "Extensão completa sem abrir demais os cotovelos",
         image: "/imgs/pulley-triceps.jpg",
         muscleImage: "/imgs/muscle/pulley-triceps.jpg",
         video: "/videos/pulley-triceps.mp4"
       },
       {
-        id: "skullCrusher",
-        name: "Tríceps testa",
-        sets: [false, false, false],
-        reps: "8 a 12 reps",
-        rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Ênfase no tríceps com barra ou halteres",
-        image: "/imgs/triceps-testa.jpg",
-        muscleImage: "/imgs/muscle/triceps-testa.jpg",
-        video: "/videos/triceps-testa.mp4"
-      },
-      {
-        id: "frenchPress",
-        name: "Tríceps francês",
-        sets: [false, false, false],
+        id: "overheadTricepsExtension",
+        name: "Tríceps francês com halter",
+        sets: [false, false],
         reps: "10 a 12 reps",
         rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Alongamento e ativação do tríceps",
+        weight: ["", ""],
+        text: "Alongamento e fortalecimento do tríceps",
         image: "/imgs/triceps-frances.jpg",
         muscleImage: "/imgs/muscle/triceps-frances.jpg",
         video: "/videos/triceps-frances.mp4"
@@ -99,39 +75,45 @@ export default [
   {
     id: "tuesday",
     day: "Terça",
+    exercises: []
+  },
+
+  {
+    id: "wednesday",
+    day: "Quarta (Pernas completas)",
     exercises: [
       {
-        id: "seatedCalfRaise",
-        name: "Panturrilha sentado",
+        id: "legPress",
+        name: "Leg press",
         sets: [false, false, false],
-        reps: "12 a 20 reps",
-        rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Foco no sóleo da panturrilha",
-        image: "/imgs/panturrilha-sentado.jpg",
-        muscleImage: "/imgs/muscle/panturrilha-sentado.jpg",
-        video: "/videos/panturrilha-sentado.mp4"
-      },
-      {
-        id: "squat",
-        name: "Agachamento",
-        sets: [false, false, false],
-        reps: "6 a 10 reps",
+        reps: "10 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: ["", "", ""],
-        text: "Exercício composto para pernas e glúteos",
-        image: "/imgs/agachamento.jpg",
-        muscleImage: "/imgs/muscle/agachamento.jpg",
-        video: "/videos/agachamento.mp4"
+        text: "Amplitude confortável, sem travar os joelhos",
+        image: "/imgs/leg-press.jpg",
+        muscleImage: "/imgs/muscle/leg-press.jpg",
+        video: "/videos/leg-press.mp4"
+      },
+      {
+        id: "seatedLegCurl",
+        name: "Mesa flexora",
+        sets: [false, false, false],
+        reps: "12 a 15 reps",
+        rest: "1 minuto",
+        weight: ["", "", ""],
+        text: "Fortalecimento dos posteriores para proteger o joelho",
+        image: "/imgs/mesa-flexora.jpg",
+        muscleImage: "/imgs/muscle/mesa-flexora.jpg",
+        video: "/videos/mesa-flexora.mp4"
       },
       {
         id: "legExtension",
         name: "Cadeira extensora",
-        sets: [false, false, false],
-        reps: "10 a 15 reps",
+        sets: [false, false],
+        reps: "12 a 15 reps",
         rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Isolamento do quadríceps",
+        weight: ["", ""],
+        text: "Carga moderada e movimento controlado",
         image: "/imgs/cadeira-extensora.jpg",
         muscleImage: "/imgs/muscle/cadeira-extensora.jpg",
         video: "/videos/cadeira-extensora.mp4"
@@ -139,105 +121,26 @@ export default [
       {
         id: "hipAbductor",
         name: "Cadeira abdutora",
-        sets: [false, false, false],
-        reps: "12 a 20 reps",
+        sets: [false, false],
+        reps: "15 a 20 reps",
         rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Ativação dos glúteos laterais",
+        weight: ["", ""],
+        text: "Estabilidade do quadril e suporte ao joelho",
         image: "/imgs/cadeira-abdutora.jpg",
         muscleImage: "/imgs/muscle/cadeira-abdutora.jpg",
         video: "/videos/cadeira-abdutora.mp4"
       },
       {
-        id: "legPress",
-        name: "Leg press",
+        id: "standingCalfRaise",
+        name: "Panturrilha sentado",
         sets: [false, false, false],
-        reps: "8 a 12 reps",
-        rest: "1 minuto e 30 segundos",
-        weight: ["", "", ""],
-        text: "Trabalho pesado de pernas",
-        image: "/imgs/leg-press.jpg",
-        muscleImage: "/imgs/muscle/leg-press.jpg",
-        video: "/videos/leg-press.mp4"
-      }
-    ]
-  },
-
-  {
-    id: "wednesday",
-    day: "Quarta",
-    exercises: [
-      {
-        id: "latPulldown",
-        name: "Pulley costas",
-        sets: [false, false, false],
-        reps: "8 a 12 reps",
-        rest: "1 minuto e 30 segundos",
-        weight: ["", "", ""],
-        text: "Foco na largura das costas",
-        image: "/imgs/pulley-costas.jpg",
-        muscleImage: "/imgs/muscle/pulley-costas.jpg",
-        video: "/videos/pulley-costas.mp4"
-      },
-      {
-        id: "closeGripLowRow",
-        name: "Remada baixa fechada",
-        sets: [false, false, false],
-        reps: "8 a 12 reps",
-        rest: "1 minuto e 30 segundos",
-        weight: ["", "", ""],
-        text: "Ênfase na parte central das costas",
-        image: "/imgs/remada-baixa-fechada.jpg",
-        muscleImage: "/imgs/muscle/remada-baixa-fechada.jpg",
-        video: "/videos/remada-baixa-fechada.mp4"
-      },
-      {
-        id: "wideGripLowRow",
-        name: "Remada baixa aberta",
-        sets: [false, false, false],
-        reps: "10 a 12 reps",
-        rest: "1 minuto e 30 segundos",
-        weight: ["", "", ""],
-        text: "Trabalho amplo das dorsais",
-        image: "/imgs/remada-baixa-aberta.jpg",
-        muscleImage: "/imgs/muscle/remada-baixa-aberta.jpg",
-        video: "/videos/remada-baixa-aberta.mp4"
-      },
-      {
-        id: "bentOverRow",
-        name: "Remada curvada",
-        sets: [false, false, false],
-        reps: "6 a 10 reps",
-        rest: "1 minuto e 30 segundos",
-        weight: ["", "", ""],
-        text: "Espessura das costas",
-        image: "/imgs/remada-curvada.jpg",
-        muscleImage: "/imgs/muscle/remada-curvada.jpg",
-        video: "/videos/remada-curvada.mp4"
-      },
-      {
-        id: "barbellCurl",
-        name: "Rosca direta",
-        sets: [false, false, false],
-        reps: "8 a 12 reps",
+        reps: "15 a 20 reps",
         rest: "1 minuto",
         weight: ["", "", ""],
-        text: "Força e volume de bíceps",
-        image: "/imgs/rosca-direta.jpg",
-        muscleImage: "/imgs/muscle/rosca-direta.jpg",
-        video: "/videos/rosca-direta.mp4"
-      },
-      {
-        id: "scottCurl",
-        name: "Rosca Scott",
-        sets: [false, false, false],
-        reps: "10 a 12 reps",
-        rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Isolamento máximo do bíceps",
-        image: "/imgs/rosca-scott.jpg",
-        muscleImage: "/imgs/muscle/rosca-scott.jpg",
-        video: "/videos/rosca-scott.mp4"
+        text: "Pausa no topo para maior ativação",
+        image: "/imgs/panturrilha-sentado.jpg",
+        muscleImage: "/imgs/muscle/panturrilha-sentado.jpg",
+        video: "/videos/panturrilha-sentado.mp4"
       }
     ]
   },
@@ -245,54 +148,48 @@ export default [
   {
     id: "thursday",
     day: "Quinta",
+    exercises: []
+  },
+
+  {
+    id: "friday",
+    day: "Sexta (Costas + Bíceps + Core)",
     exercises: [
       {
-        id: "shoulderPress",
-        name: "Desenvolvimento",
+        id: "latPulldown",
+        name: "Pulley frente",
         sets: [false, false, false],
         reps: "8 a 12 reps",
         rest: "1 minuto e 30 segundos",
         weight: ["", "", ""],
-        text: "Força e volume de ombros",
-        image: "/imgs/desenvolvimento.jpg",
-        muscleImage: "/imgs/muscle/desenvolvimento.jpg",
-        video: "/videos/desenvolvimento.mp4"
+        text: "Puxar até o peito com controle",
+        image: "/imgs/pulley-costas.jpg",
+        muscleImage: "/imgs/muscle/pulley-costas.jpg",
+        video: "/videos/pulley-costas.mp4"
       },
       {
-        id: "lateralRaise",
-        name: "Elevação lateral",
-        sets: [false, false, false],
-        reps: "12 a 15 reps",
-        rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Ênfase no deltoide lateral",
-        image: "/imgs/elevacao-lateral.jpg",
-        muscleImage: "/imgs/muscle/elevacao-lateral.jpg",
-        video: "/videos/elevacao-lateral.mp4"
-      },
-      {
-        id: "frontRaise",
-        name: "Elevação frontal",
+        id: "seatedRow",
+        name: "Remada baixa",
         sets: [false, false, false],
         reps: "10 a 12 reps",
-        rest: "1 minuto",
+        rest: "1 minuto e 30 segundos",
         weight: ["", "", ""],
-        text: "Trabalho do deltoide anterior",
-        image: "/imgs/elevacao-frontal.jpg",
-        muscleImage: "/imgs/muscle/elevacao-frontal.jpg",
-        video: "/videos/elevacao-frontal.mp4"
+        text: "Foco na retração das escápulas",
+        image: "/imgs/remada-baixa-aberta.jpg",
+        muscleImage: "/imgs/muscle/remada-baixa-aberta.jpg",
+        video: "/videos/remada-baixa-aberta.mp4"
       },
       {
-        id: "reverseFly",
-        name: "Crucifixo inverso",
-        sets: [false, false, false],
-        reps: "12 a 15 reps",
+        id: "barbellCurl",
+        name: "Rosca direta",
+        sets: [false, false],
+        reps: "10 a 12 reps",
         rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Foco no deltoide posterior",
-        image: "/imgs/crucifixo-inverso.jpg",
-        muscleImage: "/imgs/muscle/crucifixo-inverso.jpg",
-        video: "/videos/crucifixo-inverso.mp4"
+        weight: ["", ""],
+        text: "Movimento controlado, sem roubar",
+        image: "/imgs/rosca-direta.jpg",
+        muscleImage: "/imgs/muscle/rosca-direta.jpg",
+        video: "/videos/rosca-direta.mp4"
       },
       {
         id: "hammerCurl",
@@ -300,102 +197,23 @@ export default [
         sets: [false, false],
         reps: "10 a 12 reps",
         rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Bíceps e braquial",
+        weight: ["", ""],
+        text: "Fortalecimento funcional do braço",
         image: "/imgs/rosca-martelo.jpg",
         muscleImage: "/imgs/muscle/rosca-martelo.jpg",
         video: "/videos/rosca-martelo.mp4"
       },
       {
-        id: "absCrunch",
-        name: "Abdominal",
-        sets: [false, false, false],
-        reps: "15 a 20 reps",
-        rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Fortalecimento do abdômen",
-        image: "/imgs/abdominal.jpg",
-        muscleImage: "/imgs/muscle/abdominal.jpg",
-        video: ""
-      },
-      {
         id: "plank",
         name: "Prancha",
         sets: [false, false, false],
-        reps: "30 a 60 segundos",
+        reps: "30 a 45 segundos",
         rest: "1 minuto",
         weight: ["", "", ""],
-        text: "Estabilidade e core",
+        text: "Core firme e lombar neutra",
         image: "/imgs/prancha.jpg",
         muscleImage: "/imgs/muscle/prancha.jpg",
         video: ""
-      }
-    ]
-  },
-
-  {
-    id: "friday",
-    day: "Sexta",
-    exercises: [
-      {
-        id: "donkeyCalfRaise",
-        name: "Panturrilha no burrinho",
-        sets: [false, false, false],
-        reps: "15 a 20 reps",
-        rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Panturrilha com carga corporal",
-        image: "/imgs/panturrilha-burrinho.jpg",
-        muscleImage: "/imgs/muscle/panturrilha-burrinho.jpg",
-        video: "/videos/panturrilha-burrinho.mp4"
-      },
-      {
-        id: "legCurl",
-        name: "Mesa flexora",
-        sets: [false, false, false],
-        reps: "10 a 15 reps",
-        rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Isolamento dos posteriores de coxa",
-        image: "/imgs/mesa-flexora.jpg",
-        muscleImage: "/imgs/muscle/mesa-flexora.jpg",
-        video: "/videos/mesa-flexora.mp4"
-      },
-      {
-        id: "hipAbductor",
-        name: "Cadeira abdutora",
-        sets: [false, false, false],
-        reps: "12 a 20 reps",
-        rest: "1 minuto",
-        weight: ["", "", ""],
-        text: "Ativação dos glúteos",
-        image: "/imgs/cadeira-abdutora.jpg",
-        muscleImage: "/imgs/muscle/cadeira-abdutora.jpg",
-        video: "/videos/cadeira-abdutora.mp4"
-      },
-      {
-        id: "sumoDeadlift",
-        name: "Terra sumô",
-        sets: [false, false, false],
-        reps: "6 a 10 reps",
-        rest: "1 minuto e 30 segundos",
-        weight: ["", "", ""],
-        text: "Glúteos e posteriores",
-        image: "/imgs/terra-sumo.jpg",
-        muscleImage: "/imgs/muscle/terra-sumo.jpg",
-        video: "/videos/terra-sumo.mp4"
-      },
-      {
-        id: "stiffLegDeadlift",
-        name: "Stiff",
-        sets: [false, false, false],
-        reps: "8 a 12 reps",
-        rest: "1 minuto e 30 segundos",
-        weight: ["", "", ""],
-        text: "Alongamento e força dos posteriores",
-        image: "/imgs/stiff.jpg",
-        muscleImage: "/imgs/muscle/stiff.jpg",
-        video: "/videos/stiff.mp4"
       }
     ]
   },

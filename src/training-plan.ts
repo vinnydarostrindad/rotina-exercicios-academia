@@ -23,7 +23,7 @@ export default [
       },
       {
         id: "machineChestPress",
-        name: "Supino inclinado com halteres",
+        name: "Supino reto com halteres",
         sets: [false, false, false],
         reps: "10 a 12 reps",
         rest: "1 minuto e 30 segundos",

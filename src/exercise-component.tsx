@@ -1,6 +1,6 @@
 import type { ExerciseKeys } from "./App"
 import playBtnImg from "./assets/play-button-arrowhead.png"
-import { useState, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 type ExerciseProps = {
     dayIndex: number,
@@ -11,33 +11,80 @@ type ExerciseProps = {
 
 function Exercise({dayIndex, exercise, onToggleSets, onClickHold}: ExerciseProps) {
     const holdTimeout = useRef<number | null>(null)
+    const pressStartPosition = useRef<{ x: number, y: number } | null>(null)
+    const longPressTriggered = useRef(false)
+    const videoRef = useRef<HTMLVideoElement | null>(null)
     const exerciseDone = exercise.sets.every(done => done)
     const [showExerciseInfos, setShowExerciseInfos] = useState<boolean>(false)
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false)
 
-    function playOrPauseVideo(e: React.MouseEvent<HTMLVideoElement>) {
-        var video: HTMLVideoElement = e.currentTarget
-        var playBtn = video.previousElementSibling as HTMLButtonElement
+    function clearHoldTimeout() {
+        if (holdTimeout.current !== null) {
+            clearTimeout(holdTimeout.current)
+            holdTimeout.current = null
+        }
+    }
+
+    function playOrPauseVideo() {
+        const video = videoRef.current
+        if (!video) return
+
         if (video.paused) {
             video.play()
-            playBtn.hidden = true
         } else {
             video.pause()
-            playBtn.hidden = false
             video.currentTime = 0
         }
     }
 
-    function handlePressStart(dayIndex: number, exerciseName: string, setIndex: number) {
+    function handlePressStart(e: React.PointerEvent<HTMLDivElement>, exerciseName: string, setIndex: number) {
+        clearHoldTimeout()
+        pressStartPosition.current = { x: e.clientX, y: e.clientY }
+        longPressTriggered.current = false
         holdTimeout.current = setTimeout(() => {
             onClickHold(dayIndex, exerciseName, setIndex)
-    }, 500)
+            holdTimeout.current = null
+            longPressTriggered.current = true
+        }, 500)
+    }
+
+    function handlePressMove(e: React.PointerEvent<HTMLDivElement>) {
+        const startPosition = pressStartPosition.current
+        if (!startPosition) return
+
+        const movementThreshold = 10
+        if (Math.abs(e.clientX - startPosition.x) > movementThreshold || Math.abs(e.clientY - startPosition.y) > movementThreshold) {
+            clearHoldTimeout()
+            pressStartPosition.current = null
+        }
     }
 
     function handlePressEnd() {
-        if (holdTimeout.current) {
-            clearTimeout(holdTimeout.current)
-        }
+        clearHoldTimeout()
+        pressStartPosition.current = null
     }
+
+    function handleSetClick(setIndex: number) {
+        if (longPressTriggered.current) {
+            longPressTriggered.current = false
+            return
+        }
+
+        onToggleSets(dayIndex, exercise.id, setIndex)
+    }
+
+    useEffect(() => {
+        function cancelHoldOnScroll() {
+            clearHoldTimeout()
+            pressStartPosition.current = null
+        }
+
+        window.addEventListener("scroll", cancelHoldOnScroll, true)
+        return () => {
+            window.removeEventListener("scroll", cancelHoldOnScroll, true)
+            cancelHoldOnScroll()
+        }
+    }, [])
 
     return (
         <>
@@ -56,11 +103,12 @@ function Exercise({dayIndex, exercise, onToggleSets, onClickHold}: ExerciseProps
                                             <div 
                                             key={index}
                                             className={`flex flex-col justify-center w-3/7 text-center border border-wight rounded-lg p-2 cursor-pointer ${done ? "set-done" : ""}`}
-                                            onClick={() => onToggleSets(dayIndex, exercise.id, index)}
-                                            onMouseDown={() => handlePressStart(dayIndex, exercise.id, index)}
-                                            onMouseUp={handlePressEnd}
-                                            onTouchStart={() => handlePressStart(dayIndex, exercise.id, index)}
-                                            onTouchEnd={handlePressEnd}>
+                                            onClick={() => handleSetClick(index)}
+                                            onPointerDown={(e) => handlePressStart(e, exercise.id, index)}
+                                            onPointerMove={handlePressMove}
+                                            onPointerUp={handlePressEnd}
+                                            onPointerCancel={handlePressEnd}
+                                            onPointerLeave={handlePressEnd}>
                                                 <p className="font-bold">{index + 1}° Série</p>
                                                 {
                                                     exercise.weight[index] ? <p className="text-xs mt-1"><span className="font-semibold">Peso</span>: {exercise.weight[index]}</p> : null
@@ -77,8 +125,24 @@ function Exercise({dayIndex, exercise, onToggleSets, onClickHold}: ExerciseProps
                             {
                                 exercise.video ?
                                     <div className="flex justify-center items-center">
-                                        <button className="size-12 absolute bg-blue-700 rounded-full flex justify-center items-center"><img src={playBtnImg} style={{marginLeft: "3px"}}/></button>
-                                        <video src={exercise.video} onClick={(e) => playOrPauseVideo(e)}></video>
+                                        {
+                                            !isVideoPlaying ?
+                                            <button
+                                                type="button"
+                                                className="size-12 absolute bg-blue-700 rounded-full flex justify-center items-center"
+                                                aria-label={isVideoPlaying ? "Pausar vídeo" : "Reproduzir vídeo"}
+                                                onClick={playOrPauseVideo}>
+                                                <img src={playBtnImg} style={{marginLeft: "3px"}} alt=""/>
+                                            </button>
+                                            : ""
+                                        }
+                                        <video
+                                            ref={videoRef}
+                                            src={exercise.video}
+                                            onClick={playOrPauseVideo}
+                                            onPlay={() => setIsVideoPlaying(true)}
+                                            onPause={() => setIsVideoPlaying(false)}
+                                            onEnded={() => setIsVideoPlaying(false)}></video>
                                     </div>
                                     :  null
                             }

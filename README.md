@@ -121,6 +121,13 @@ Todo o plano fica em `src/training-plan.ts`. Para adicionar ou alterar exercíci
 
 > ⚠️ Como o progresso é salvo no `localStorage`, ao mudar o plano pode ser necessário limpar os dados do site no navegador para carregar a nova versão.
 
+## 🔮 Ideias para adicionar
+ 
+- [ ] Histórico de cargas por exercício para acompanhar a evolução
+- [ ] Editar o plano de treino pela própria interface
+- [ ] Temporizador de descanso entre as séries
+- [ ] Testes automatizados
+
 ## 👨‍💻 Autor
 
 Feito por **Vinny Daros Trindade** como projeto de aprendizado em React.
